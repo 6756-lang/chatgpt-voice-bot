@@ -28,6 +28,7 @@ def chat():
     filename = f"responses/{uuid.uuid4().hex}.mp3"
     os.makedirs('responses', exist_ok=True)
     tts.save(filename)
+print(f"Generated speech file at: {filename}")
 
     return jsonify({'text': reply_text, 'audio_url': '/' + filename})
 
